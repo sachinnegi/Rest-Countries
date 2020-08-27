@@ -1,0 +1,21 @@
+
+.logo{
+    height: 140px;
+    width: 155px;
+    margin-top: -1.9rem;
+}
+.header{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    /* background: hsl(209, 23%, 22%); */
+    background:hsl(0, 0%, 100%);
+    height: 81px;
+    box-shadow: 0 2px 5px  rgba(0, 0, 0, 0.2);
+
+}
+.header h2{
+    color: white;
+    margin-right: 5px;
+}

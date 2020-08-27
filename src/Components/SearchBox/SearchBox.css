@@ -1,0 +1,26 @@
+.searchbox input{
+    
+    background: hsl(0, 0%, 100%);
+    border: none;
+    border-radius: 3px;
+    height: 40px;
+    width: 400px;
+    box-shadow: 1px 0px 4px rgba(0,0,0,0.4);
+    color : hsl(0, 0%, 52%);
+    padding:20px;
+
+    
+}
+
+::placeholder{
+    color:hsl(0, 0%, 52%);
+    font-size: 15px;
+}
+
+.searchbox{
+    margin: 40px 0 0 20px;
+    display: flex;
+    flex-flow:row wrap;
+    align-items: center;
+    
+}
