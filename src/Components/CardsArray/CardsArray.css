@@ -1,0 +1,9 @@
+.cards_container{
+    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    /* background: red; */
+    /* height: 50px; */
+}

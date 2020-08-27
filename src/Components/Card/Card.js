@@ -6,10 +6,11 @@ const Card = ({name,url,population,region,capital})=>{
         <div className = 'card'>
             <img alt = 'countryimg' src={url} />
             <div className="card-wrapper">
-                <h1>{name}</h1>
-                <h4>{ `Population: ${population}` }</h4>
-                <h4>{ `Region: ${region}` }</h4>
-                <h4>{ `Capital: ${capital}` }</h4>
+                <h2>{name}</h2>
+                <p> <span className='card_bold'>Population:</span>  <span> {population} </span> </p>
+                <p> <span className='card_bold'>Region:</span>  <span> {region} </span> </p>
+                <p> <span className='card_bold'>Capital:</span>  <span> {capital} </span> </p>
+                
             </div>
         </div>
     )

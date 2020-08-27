@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
+import './CardsArray.css';
 
 const CardsArray = ({countries}) => {
     console.log(countries);
