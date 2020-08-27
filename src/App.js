@@ -5,6 +5,7 @@ import Header from './Components/Header/Header';
 import SearchBox from './Components/SearchBox/SearchBox';
 import Filter from './Components/Filter/Filter';
 import Card from './Components/Card/Card';
+import CardsArray from './Components/CardsArray/CardsArray';
 class App extends Component {
   constructor(){
     super();
@@ -20,7 +21,7 @@ class App extends Component {
       const resp = await fetch(url);
       const data = await resp.json();
       this.setState({countries: data});
-      console.log(this.state.countries[200]);
+      console.log(this.state.countries[0].name);
     }
     fetchCountries();
 
@@ -35,7 +36,7 @@ class App extends Component {
         <Header />
         <SearchBox/>
         <Filter/>
-        <Card />
+        <CardsArray countries = {this.state.countries} />
       </div>
     )
   }

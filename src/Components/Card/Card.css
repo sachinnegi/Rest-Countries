@@ -1,6 +1,9 @@
 .card{
     /* background: hsl(0, 0%, 100%); */
-    background: red;
     width: 200px;
     height: 300px;
+}
+.card img{
+    height:100px;
+    width:100px;
 }
