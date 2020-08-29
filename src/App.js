@@ -4,7 +4,6 @@ import 'tachyons';
 import Header from './Components/Header/Header';
 import SearchBox from './Components/SearchBox/SearchBox';
 import Filter from './Components/Filter/Filter';
-import Card from './Components/Card/Card';
 import CardsArray from './Components/CardsArray/CardsArray';
 class App extends Component {
   constructor(){
