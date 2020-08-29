@@ -1,13 +1,10 @@
 .card{
     background: hsl(0, 0%, 100%);
-    width: 270px;
-    height: 360px;
+    width: 300px;
+    height: auto;
     margin : 35px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     transition: all 0.5s;
-}
-.card p{
-    font-size: 15px;
 }
 
 .card:hover{
@@ -15,14 +12,24 @@
 }
 
 .card-wrapper{
-    margin-left: 15px;   
+    margin-left: 15px;
 }
-.card img{
-    height:180px;
-    width:280px;
+
+.line_height{
+    line-height: 5px;   
 }
 
 .card_bold{
     font-weight: 600;
+}
 
+span{
+    font-size: 14px;
+}
+
+.image-container{
+    margin:0;
+    padding:0;   
+    height: 180px;
+    width: 100%;
 }
