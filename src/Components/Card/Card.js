@@ -4,7 +4,7 @@ import './Card.css';
 const Card = ({name,url,population,region,capital})=>{
     return(
         <div className = 'card'>
-            <div style = {{background : `url("${url}")`, backgroundSize: "cover"}} className= 'image-container'>
+            <div style = {{backgroundImage : `url("${url}")`, backgroundSize: "cover"}} className= 'image-container'>
     
             </div>
             <div className="card-wrapper">
@@ -17,6 +17,7 @@ const Card = ({name,url,population,region,capital})=>{
                 
             </div>
         </div>
+        
     )
 }
 
