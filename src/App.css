@@ -1,0 +1,15 @@
+.search-and-filter{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    margin: 60px 0px;
+}
+
+@media screen and (max-width:500px) {
+    
+    .search-and-filter{
+        flex-flow: column wrap;
+    }
+}

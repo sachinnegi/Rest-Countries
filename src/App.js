@@ -5,37 +5,61 @@ import Header from './Components/Header/Header';
 import SearchBox from './Components/SearchBox/SearchBox';
 import Filter from './Components/Filter/Filter';
 import CardsArray from './Components/CardsArray/CardsArray';
+
 class App extends Component {
   constructor(){
     super();
     this.state ={
       countries: [],
       searchField: '',
+      url : "https://restcountries.eu/rest/v2/all",
+
+    }
+  }
+
+  fetchCountries = async () =>{
+    try{
+      const resp = await fetch(this.state.url);
+      const data = await resp.json();
+      if (resp.status === 200){
+        this.setState({countries: data});
+
+      }
+      else{
+        this.setState( { url:"https://restcountries.eu/rest/v2/all"} )
+        this.fetchCountries();
+      }
+    }
+    catch(error){
+      console.log('THIS IS THE ERROR',error);
     }
   }
 
   componentDidMount(){
-    const url = "https://restcountries.eu/rest/v2/all";
-    const fetchCountries = async () =>{
-      const resp = await fetch(url);
-      const data = await resp.json();
-      this.setState({countries: data});
-      console.log(this.state.countries[0].name);
-    }
-    fetchCountries();
 
-    // fetch('https://restcountries.eu/rest/v2/all')
-    //   .then(response => response.json())
-    //     .then(data => console.log(data[0].name,data[0].currencies[0].name))
+    this.fetchCountries();
+  }
+
+
+
+  onSearchInputChange = (event) =>{
+    this.setState( {searchField : event.target.value} )
   }
 
   render(){
+
+    const filteredCountry = this.state.countries.filter( country => {
+      return ( country.name.toLowerCase().includes(this.state.searchField.toLowerCase() ));
+    })
+
     return(
       <div>
         <Header />
-        <SearchBox/>
-        <Filter/>
-        <CardsArray countries = {this.state.countries} />
+        <div className= "search-and-filter">
+          <SearchBox onInputChange = {this.onSearchInputChange} />
+          <Filter />
+        </div>
+        <CardsArray countries = {filteredCountry} />
       </div>
     )
   }
