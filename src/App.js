@@ -13,10 +13,12 @@ class App extends Component {
       countries: [],
       searchField: '',
       url : "https://restcountries.eu/rest/v2/all",
-      filter: ''
 
     }
   }
+
+
+  // Fetching Data from the Api
 
   fetchCountries = async () =>{
     try{
@@ -42,25 +44,26 @@ class App extends Component {
   }
 
 
+// Handling input changes
 
   onSearchInputChange = (event) =>{
     this.setState( {searchField : event.target.value} )
   }
 
+  filtedredCountries = ()=> {
+    console.log(this.state.url)
+    this.fetchCountries()
+  }
+
   onFilterChange = (event) =>{
     const newUrl= `https://restcountries.eu/rest/v2/region/${event.target.value}`
     this.setState( { url: newUrl  } )
-    this.setState( { filter: event.target.value  } )
-    
-    console.log(this.state.url);
-    console.log(event.target.value);
-    // this.fetchCountries();
+    setTimeout(this.filtedredCountries  ,1 );
+   
   }
 
   render(){
-    if (this.state.filter){
-      this.fetchCountries();
-    }
+    console.log('here')
     const filteredCountry = this.state.countries.filter( country => {
       return ( country.name.toLowerCase().includes(this.state.searchField.toLowerCase() ));
     })
