@@ -13,6 +13,7 @@ class App extends Component {
       countries: [],
       searchField: '',
       url : "https://restcountries.eu/rest/v2/all",
+      filter: ''
 
     }
   }
@@ -46,8 +47,20 @@ class App extends Component {
     this.setState( {searchField : event.target.value} )
   }
 
-  render(){
+  onFilterChange = (event) =>{
+    const newUrl= `https://restcountries.eu/rest/v2/region/${event.target.value}`
+    this.setState( { url: newUrl  } )
+    this.setState( { filter: event.target.value  } )
+    
+    console.log(this.state.url);
+    console.log(event.target.value);
+    // this.fetchCountries();
+  }
 
+  render(){
+    if (this.state.filter){
+      this.fetchCountries();
+    }
     const filteredCountry = this.state.countries.filter( country => {
       return ( country.name.toLowerCase().includes(this.state.searchField.toLowerCase() ));
     })
@@ -57,9 +70,9 @@ class App extends Component {
         <Header />
         <div className= "search-and-filter">
           <SearchBox onInputChange = {this.onSearchInputChange} />
-          <Filter />
+          <Filter onFilterChange = {this.onFilterChange} />
         </div>
-        <CardsArray countries = {filteredCountry} />
+        <CardsArray countries = {filteredCountry.slice(0,100)} />
       </div>
     )
   }

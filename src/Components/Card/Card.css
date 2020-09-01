@@ -1,8 +1,8 @@
 .card{
     background: hsl(0, 0%, 100%);
-    width: 300px;
+    width: 270px;
     height: auto;
-    margin : 35px;
+    margin : 50px 50px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     transition: all 0.5s;
 }
@@ -30,6 +30,6 @@ span{
 .image-container{
     margin:0;
     padding:0;   
-    height: 180px;
+    height: 150px;
     width: 100%;
 }

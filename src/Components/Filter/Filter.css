@@ -1,0 +1,15 @@
+#selection{
+    background-color: hsl(0, 0%, 100%);
+    border: 3px solid hsl(0, 0%, 100%);
+    border-radius: 3px;
+    height: 40px;
+    padding: 5px;
+    box-shadow: 1px 0px 4px rgba(0,0,0,0.4);
+    cursor: pointer
+}
+
+#selection:hover{
+    color:skyblue;
+    background-color: rgb(248, 248, 248);
+    /* display: none; */
+}
