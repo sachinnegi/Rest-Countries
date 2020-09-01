@@ -16,3 +16,9 @@
     color:hsl(0, 0%, 52%);
     font-size: 15px;
 }
+
+@media screen and (max-width:500px){
+    .searchbox input{
+        width: 250px;
+    }
+}
