@@ -10,6 +10,13 @@
 @media screen and (max-width:500px) {
     
     .search-and-filter{
-        flex-flow: column wrap;
+        padding: 0 0;
+        margin: 20px 0 20px 20px;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: flex-start;
+        /* background : red; */
+        height: 150px;
+
     }
 }

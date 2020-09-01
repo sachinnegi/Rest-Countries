@@ -75,7 +75,7 @@ class App extends Component {
           <SearchBox onInputChange = {this.onSearchInputChange} />
           <Filter onFilterChange = {this.onFilterChange} />
         </div>
-        <CardsArray countries = {filteredCountry.slice(0,100)} />
+        <CardsArray countries = {filteredCountry.slice(0,50)} />
       </div>
     )
   }
