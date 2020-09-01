@@ -6,14 +6,14 @@
     height: 40px;
     width: 400px;
     box-shadow: 1px 0px 4px rgba(0,0,0,0.4);
-    color : hsl(0, 0%, 52%);
+    color : hsl(0, 1%, 28%);
     padding:20px;
 
     
 }
 
 ::placeholder{
-    color:hsl(0, 0%, 52%);
+    color:hsl(0, 4%, 23%);
     font-size: 15px;
 }
 

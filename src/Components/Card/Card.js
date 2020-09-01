@@ -8,7 +8,7 @@ const Card = ({name,url,population,region,capital})=>{
     
             </div>
             <div className="card-wrapper">
-                <h3>{name}</h3>
+                <h2>{name}</h2>
                 <div className="line_height">
                     <p> <span className='card_bold'>Population:</span>  <span> {population} </span> </p>
                     <p> <span className='card_bold'>Region:</span>  <span> {region} </span> </p>

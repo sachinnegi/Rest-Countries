@@ -1,9 +1,17 @@
+*{
+  /* font-family: 'Balsamiq Sans', cursive; */
+  font-family: 'Courgette', cursive;
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* background:  hsl(0, 0%, 98%); */
-  /* background: hsl(207, 26%, 17%); */
-  background: hsl(0, 0%, 98%);
+
+  /* background: hsl(0, 0%, 98%); */
+  background: hsl(0, 7%, 92%);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
