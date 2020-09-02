@@ -45,6 +45,7 @@ class App extends Component {
   componentDidMount(){
 
     this.fetchCountries();
+    
   }
 
 
@@ -68,12 +69,21 @@ class App extends Component {
    
   }
 
+  // handling card clicks
+
+  onCardClicked = (key) =>{
+   console.log('clicked')
+   console.log(key)
+  }
+
+  
 // Render method
 
   render(){
     
+    
     const filteredCountry = this.state.countries.filter( country => {
-      return ( country.name.toLowerCase().includes(this.state.searchField.toLowerCase() ));
+        return ( country.name.toLowerCase().includes(this.state.searchField.toLowerCase() ));
     })
 
     return(
@@ -87,9 +97,9 @@ class App extends Component {
                   <SearchBox onInputChange = {this.onSearchInputChange} />
                   <Filter onFilterChange = {this.onFilterChange} />
                 </div>
-          <CardsArray countries = {filteredCountry.slice(0,50)} />   {/*sliced some countries for faster page load*/}
+          <CardsArray countries = {filteredCountry.slice(0,50)} onCardClicked ={this.onCardClicked} />   {/*sliced some countries for faster page load*/}
             </div>
-            :<FlagDetails /> 
+            :<FlagDetails onCardClicked ={this.onCardClicked} /> 
           }
       </div>
     )

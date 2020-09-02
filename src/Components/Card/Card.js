@@ -1,9 +1,11 @@
 import React from 'react';
 import './Card.css';
 
-const Card = ({name,url,population,region,capital})=>{
+
+
+const Card = ({click, name,url,population,region,capital})=>{
     return(
-        <div className = 'card'>
+        <div onClick = { () => click(name) } className = 'card'>
             <div style = {{backgroundImage : `url("${url}")`, backgroundSize: "cover",backgroundPosition: 'center',backgroundRepeat: 'no-repeat'}} className= 'image-container'>
     
             </div>
