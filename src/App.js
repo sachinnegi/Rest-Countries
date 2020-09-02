@@ -72,7 +72,7 @@ class App extends Component {
   // handling card clicks
 
   onCardClicked = (key) =>{
-   console.log('clicked')
+   console.log('clickedd')
    console.log(key)
   }
 
