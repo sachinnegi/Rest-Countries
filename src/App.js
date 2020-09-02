@@ -5,6 +5,7 @@ import Header from './Components/Header/Header';
 import SearchBox from './Components/SearchBox/SearchBox';
 import Filter from './Components/Filter/Filter';
 import CardsArray from './Components/CardsArray/CardsArray';
+import FlagDetails from './Components/FlagDetails/FlagDetails';
 
 class App extends Component {
   constructor(){
@@ -13,6 +14,8 @@ class App extends Component {
       countries: [],
       searchField: '',
       url : "https://restcountries.eu/rest/v2/all",
+      flagDetail : false,
+      isFlagClicked : 'no',
 
     }
   }
@@ -38,6 +41,7 @@ class App extends Component {
     }
   }
 
+
   componentDidMount(){
 
     this.fetchCountries();
@@ -49,6 +53,8 @@ class App extends Component {
   onSearchInputChange = (event) =>{
     this.setState( {searchField : event.target.value} )
   }
+
+// Handling Filtered Component
 
   filtedredCountries = ()=> {
     console.log(this.state.url)
@@ -62,20 +68,29 @@ class App extends Component {
    
   }
 
+// Render method
+
   render(){
-    console.log('here')
+    
     const filteredCountry = this.state.countries.filter( country => {
       return ( country.name.toLowerCase().includes(this.state.searchField.toLowerCase() ));
     })
 
     return(
       <div>
-        <Header />
-        <div className= "search-and-filter">
-          <SearchBox onInputChange = {this.onSearchInputChange} />
-          <Filter onFilterChange = {this.onFilterChange} />
-        </div>
-        <CardsArray countries = {filteredCountry.slice(0,50)} />
+          <Header />
+          {/*conditional rendering of compoenents*/}
+
+          {this.state.flagDetail===false
+            ?<div> 
+                <div className= "search-and-filter">
+                  <SearchBox onInputChange = {this.onSearchInputChange} />
+                  <Filter onFilterChange = {this.onFilterChange} />
+                </div>
+          <CardsArray countries = {filteredCountry.slice(0,50)} />   {/*sliced some countries for faster page load*/}
+            </div>
+            :<FlagDetails /> 
+          }
       </div>
     )
   }
