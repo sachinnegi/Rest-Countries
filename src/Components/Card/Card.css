@@ -1,5 +1,5 @@
 .card{
-    background: hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 100%);
     width: 270px;
     height: auto;
     margin : 50px 50px;
