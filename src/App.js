@@ -14,8 +14,8 @@ class App extends Component {
       countries: [],
       searchField: '',
       url : "https://restcountries.eu/rest/v2/all",
-      flagDetail : false,
-      isFlagClicked : 'no',
+      isFlagClicked : false,
+      clickedCardCountry : '',
 
     }
   }
@@ -71,9 +71,18 @@ class App extends Component {
 
   // handling card clicks
 
-  onCardClicked = (key) =>{
-   console.log('clickedd')
-   console.log(key)
+  changeCardClickState(value){
+    if (value === true){
+      this.setState({isFlagClicked: true})
+    }
+    else{
+      this.setState({isFlagClicked: false})
+    }
+  }
+
+  onCardClicked = (country) =>{
+    this.changeCardClickState(true);
+    this.setState( {clickedCardCountry: country});
   }
 
   
@@ -91,7 +100,7 @@ class App extends Component {
           <Header />
           {/*conditional rendering of compoenents*/}
 
-          {this.state.flagDetail===false
+          {this.state.isFlagClicked===false
             ?<div> 
                 <div className= "search-and-filter">
                   <SearchBox onInputChange = {this.onSearchInputChange} />
@@ -99,7 +108,7 @@ class App extends Component {
                 </div>
           <CardsArray countries = {filteredCountry.slice(0,50)} onCardClicked ={this.onCardClicked} />   {/*sliced some countries for faster page load*/}
             </div>
-            :<FlagDetails onCardClicked ={this.onCardClicked} /> 
+            :<FlagDetails onCardClicked ={this.state.clickedCardCountry} /> 
           }
       </div>
     )

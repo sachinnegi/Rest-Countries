@@ -3,9 +3,9 @@ import './Card.css';
 
 
 
-const Card = ({click, name,url,population,region,capital})=>{
+const Card = ({click, country, name,url,population,region,capital})=>{
     return(
-        <div onClick = { () => click(name) } className = 'card'>
+        <div onClick = { () => click(country) } className = 'card'>
             <div style = {{backgroundImage : `url("${url}")`, backgroundSize: "cover",backgroundPosition: 'center',backgroundRepeat: 'no-repeat'}} className= 'image-container'>
     
             </div>

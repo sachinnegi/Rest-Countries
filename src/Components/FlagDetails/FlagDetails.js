@@ -1,10 +1,10 @@
 import React from 'react';
 
-const FlagDetails = () => {
-
+const FlagDetails = ({onCardClicked}) => {
+    console.log(onCardClicked)
     return (
         <div>
-            FLAG DETAILS
+            {onCardClicked.name}
         </div>
     )
 }

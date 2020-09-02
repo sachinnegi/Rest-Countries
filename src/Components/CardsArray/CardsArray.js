@@ -11,8 +11,9 @@ const CardsArray = ({countries, onCardClicked}) => {
                     
                     return(
                         <Card 
-                            click = {onCardClicked}
                             key = {countries[i].numericCode}
+                            click = {onCardClicked}
+                            country = {country}
                             name = {countries[i].name}
                             url = {countries[i].flag}
                             population = {countries[i].population}
