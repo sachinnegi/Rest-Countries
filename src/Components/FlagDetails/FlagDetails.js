@@ -32,7 +32,7 @@ const FlagDetails = ({country}) => {
                         
                         <div className = 'b-card-1'>
                             <div>
-                                <div className='left-part'>Languages:</div>
+                                <div className='left-part'>Languages :</div>
                                 <div className="small-card-bottom">
                                 {
                                     country.languages.map((value,i)=>{
@@ -45,7 +45,7 @@ const FlagDetails = ({country}) => {
                         </div>
                         <div className = 'b-card-2'>
                             <div>
-                                <div className='left-part'>Border Countries:</div>
+                                <div className='left-part'>Border Countries :</div>
                                 <div className="small-card-bottom">
                                 {
                                     country.borders.map((value,i)=>{
