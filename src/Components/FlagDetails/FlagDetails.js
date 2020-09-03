@@ -20,7 +20,6 @@ const FlagDetails = ({country}) => {
                 </div>
             </div>
             
-            {country.name}
         </div>
     )
 }
