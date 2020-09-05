@@ -11,6 +11,7 @@
 
 .card:hover{
     transform: scale(1.05,1.05);
+    /* transform: translate(50px, 50px); */
 }
 
 .card-wrapper{

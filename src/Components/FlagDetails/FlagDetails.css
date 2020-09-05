@@ -43,6 +43,11 @@
     background-repeat: no-repeat;
     height:350px;
     width:500px;
+    transition: all 0.5s;
+}
+
+.flag-image-container:hover{
+    transform: rotateY(90deg);
 }
 
 .image-detail-container{
@@ -80,6 +85,8 @@
     width: 70px;;
     border: none;
     margin:5px;
+    padding : 6px 0px 0 0;
+    height: 23px;
     border-radius: 3px;
     background-color: hsl(0, 0%, 100%);
     box-shadow: 2px 1px 4px rgba(0,0,0,0.4)
@@ -88,7 +95,7 @@
 .card-detail-1 p{
     font-size: 18px;
     line-height: 3px;
-    /* font-weight: 700; */
+    font-weight: bold;
 }
 
 .card-detail-2{

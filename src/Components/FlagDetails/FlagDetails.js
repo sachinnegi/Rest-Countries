@@ -1,13 +1,13 @@
 import React from 'react';
 import './FlagDetails.css'
 
-const FlagDetails = ({country}) => {
+const FlagDetails = ({changeCardClickState, country}) => {
     console.log(country)
 
     return (
         <div className='cardsdetail-container'>
 
-            <div className='back-button'>
+            <div onClick = { () => changeCardClickState(false)} className='back-button'>
                 <span>&larr;</span> <span>Back</span> 
             </div>
 

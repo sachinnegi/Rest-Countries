@@ -71,7 +71,7 @@ class App extends Component {
 
   // handling card clicks
 
-  changeCardClickState(value){
+  changeCardClickState = (value) =>{
     if (value === true){
       this.setState({isFlagClicked: true})
     }
@@ -97,7 +97,7 @@ class App extends Component {
 
     return(
       <div>
-          <Header />
+          <Header changeCardClickState = {this.changeCardClickState} />
           {/*conditional rendering of compoenents*/}
 
           {this.state.isFlagClicked===false
@@ -106,9 +106,9 @@ class App extends Component {
                   <SearchBox onInputChange = {this.onSearchInputChange} />
                   <Filter onFilterChange = {this.onFilterChange} />
                 </div>
-          <CardsArray countries = {filteredCountry.slice(0,50)} onCardClicked ={this.onCardClicked} />   {/*sliced some countries for faster page load*/}
+          <CardsArray countries = {filteredCountry.slice(0,100)} onCardClicked ={this.onCardClicked} />   {/*sliced some countries for faster page load*/}
             </div>
-            :<FlagDetails country ={this.state.clickedCardCountry} /> 
+            :<FlagDetails changeCardClickState = {this.changeCardClickState} country ={this.state.clickedCardCountry} /> 
           }
       </div>
     )
