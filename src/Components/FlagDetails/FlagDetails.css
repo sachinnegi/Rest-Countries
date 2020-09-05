@@ -38,6 +38,7 @@
 }
 
 .flag-image-container{
+    display:flex;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -96,6 +97,7 @@
     font-size: 18px;
     line-height: 3px;
     font-weight: bold;
+    font-family: 'Balsamiq Sans', cursive;
 }
 
 .card-detail-2{
@@ -127,4 +129,43 @@
     display:flex;
     flex-flow: row wrap;
     margin-left:15px;
+}
+
+/* Responsive Design   */
+
+@media screen and (max-width: 1114px){
+    .image-detail-container{
+        display: flex;
+        flex-flow: column nowrap;
+        width: auto;
+        height: auto;
+
+    }
+    .detail-container{
+        width: auto;
+        height: auto;
+        margin: 0 10px;
+        display: flex;
+        flex-flow: column nowrap;
+        /* background: red; */
+    }
+}
+
+@media screen and (max-width:567px){
+    .flag-image-container{
+        width:300px;
+        height: 270px;
+    }
+
+    .detail-container h1{
+        margin-top: 60px;
+    }
+    .card-detail-1{
+        margin-top: 40px;
+        height:auto;
+        max-width: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+    }
 }

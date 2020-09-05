@@ -5,8 +5,8 @@ import './Header.css'
 
 const Header = ( {changeCardClickState} ) =>{
     return(
-        <div onClick = {() => changeCardClickState(false)} className="header">
-            <img className = 'logo' alt='headerimg' src={logo} />
+        <div  className="header">
+            <img onClick = {() => changeCardClickState(false)} className = 'logo' alt='headerimg' src={logo} />
             <h2>Light</h2> 
         </div>
     )
