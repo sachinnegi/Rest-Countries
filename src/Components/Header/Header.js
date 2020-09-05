@@ -3,10 +3,9 @@ import React from 'react';
 import logo from './logo_transparent.png';
 import './Header.css'
 
-const Header = (changeCardClickState) =>{
-    console.log(changeCardClickState(true))
+const Header = ( {changeCardClickState} ) =>{
     return(
-        <div onClick = { () => changeCardClickState(false)} className="header">
+        <div onClick = {() => changeCardClickState(false)} className="header">
             <img className = 'logo' alt='headerimg' src={logo} />
             <h2>Light</h2> 
         </div>
