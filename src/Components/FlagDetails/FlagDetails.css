@@ -169,4 +169,15 @@
         flex-flow: column nowrap;
         justify-content: center;
     }
+    .cardsdetail-container{
+        margin-left: 0px;
+        
+    }
+    .image-detail-container{
+        margin-left:-1.2rem;
+        /* background: red; */
+    }
+    .back-button{
+        margin-left:-1.2rem;
+    }
 }
