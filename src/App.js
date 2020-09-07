@@ -48,7 +48,7 @@ class App extends Component {
 
     anime({
       targets: '.country-header',
-      translateX: 250,
+      translateX: 50,
       direction: 'reverse',
       easing: 'easeInOutSine'
     });
@@ -70,7 +70,7 @@ class App extends Component {
 
     anime({
       targets: '.logo',
-      translateX: 250,
+      translateX: 150,
       direction: 'alternate',
       loop: true,
       duration: 4000,

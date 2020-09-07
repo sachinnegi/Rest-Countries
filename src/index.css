@@ -1,13 +1,14 @@
 *{
   
   font-family: 'Courgette', cursive;
+  
 }
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  min-width: 275px;
+  min-width: 295px;
   /* background: hsl(0, 0%, 98%); */
   background: hsl(0, 7%, 92%);
 }
