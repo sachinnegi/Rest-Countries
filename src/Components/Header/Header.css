@@ -5,6 +5,7 @@
     margin-top: -1.6rem;
 }
 .header{
+    max-width: 100%;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
