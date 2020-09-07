@@ -7,6 +7,8 @@ import Filter from './Components/Filter/Filter';
 import CardsArray from './Components/CardsArray/CardsArray';
 import FlagDetails from './Components/FlagDetails/FlagDetails';
 
+import anime from 'animejs/lib/anime.es.js';
+
 class App extends Component {
   constructor(){
     super();
@@ -41,10 +43,47 @@ class App extends Component {
     }
   }
 
+  componentDidUpdate(){
+
+    anime({
+      targets: '.country-header',
+      translateX: 250,
+      direction: 'reverse',
+      easing: 'easeInOutSine'
+    });
+
+    anime({
+      targets: '.card',
+      translateX: anime.stagger(10, {grid: [4, 5], from: 'center', axis: 'x'}),
+      translateY: anime.stagger(10, {grid: [4, 5], from: 'center', axis: 'y'}),
+      rotateZ: anime.stagger([0, 10], {grid: [4, 5], from: 'center', axis: 'x'}),
+      delay: anime.stagger(200, {grid: [4, 5], from: 'center'}),
+      easing: 'easeInOutQuad'
+    });
+
+  }
 
   componentDidMount(){
-
+  
     this.fetchCountries();
+
+    
+
+
+    anime({
+      targets: '.logo',
+      translateX: 250,
+      direction: 'alternate',
+      loop: true,
+      duration: 4000,
+      easing: function(el, i, total) {
+        return function(t) {
+          return Math.pow(Math.sin(t * (i + 1)), total);
+        }
+      }
+    });
+
+
     
   }
 
@@ -106,7 +145,7 @@ class App extends Component {
                   <SearchBox onInputChange = {this.onSearchInputChange} />
                   <Filter onFilterChange = {this.onFilterChange} />
                 </div>
-          <CardsArray countries = {filteredCountry.slice(0,100)} onCardClicked ={this.onCardClicked} />   {/*sliced some countries for faster page load*/}
+          <CardsArray countries = {filteredCountry.slice(0,130)} onCardClicked ={this.onCardClicked} />   {/*sliced some countries for faster page load*/}
             </div>
             :<FlagDetails changeCardClickState = {this.changeCardClickState} country ={this.state.clickedCardCountry} /> 
           }

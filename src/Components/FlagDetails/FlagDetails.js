@@ -15,7 +15,7 @@ const FlagDetails = ({changeCardClickState, country}) => {
                 <div style ={{backgroundImage: `url("${country.flag}")`}} className = "flag-image-container">
                 </div>
                 <div className = "detail-container">
-                    <h1> {country.name} </h1>
+                    <h1 className='country-header'> {country.name} </h1>
                     <div className= 'card-detail-1'>
                         <p>Native Name : {country.nativeName}</p>
                         <p>Population : <span className="right-part" >{country.population}</span></p>
