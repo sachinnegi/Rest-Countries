@@ -44,7 +44,7 @@ class App extends Component {
   }
 
   componentDidUpdate(){
-    
+    window.scrollTo(0, 0);
 
     anime({
       targets: '.country-header',
@@ -65,7 +65,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-  
+
     this.fetchCountries();
 
     anime({
