@@ -44,6 +44,7 @@ class App extends Component {
   }
 
   componentDidUpdate(){
+    
 
     anime({
       targets: '.country-header',
@@ -67,9 +68,6 @@ class App extends Component {
   
     this.fetchCountries();
 
-    
-
-
     anime({
       targets: '.logo',
       translateX: 250,
@@ -82,8 +80,6 @@ class App extends Component {
         }
       }
     });
-
-
     
   }
 
@@ -97,7 +93,6 @@ class App extends Component {
 // Handling Filtered Component
 
   filtedredCountries = ()=> {
-    console.log(this.state.url)
     this.fetchCountries()
   }
 
@@ -120,6 +115,7 @@ class App extends Component {
   }
 
   onCardClicked = (country) =>{
+    this.setState({searchField:''});
     this.changeCardClickState(true);
     this.setState( {clickedCardCountry: country});
   }
@@ -142,7 +138,7 @@ class App extends Component {
           {this.state.isFlagClicked===false
             ?<div> 
                 <div className= "search-and-filter">
-                  <SearchBox onInputChange = {this.onSearchInputChange} />
+                  <SearchBox clickState = {this.state.isFlagClicked} onInputChange = {this.onSearchInputChange} />
                   <Filter onFilterChange = {this.onFilterChange} />
                 </div>
           <CardsArray countries = {filteredCountry.slice(0,130)} onCardClicked ={this.onCardClicked} />   {/*sliced some countries for faster page load*/}

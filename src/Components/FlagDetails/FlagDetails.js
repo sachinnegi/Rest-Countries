@@ -1,9 +1,9 @@
 import React from 'react';
 import './FlagDetails.css'
 
-const FlagDetails = ({changeCardClickState, country}) => {
-    console.log(country)
 
+const FlagDetails = ({changeCardClickState, country}) => {
+    
     return (
         <div className='cardsdetail-container'>
 
