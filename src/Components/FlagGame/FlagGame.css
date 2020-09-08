@@ -1,0 +1,64 @@
+.image-option-container{
+    /* background: red; */
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.options{
+    border: 2px solid none;
+    border-radius: 5px;
+    display:flex;
+    flex-flow: column nowrap;  
+    margin:5px;
+    
+    background-color: hsl(0, 0%, 100%); 
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.4),
+                -2px 0px 4px rgba(0,0,0,0.4);
+    cursor: pointer;
+    padding : 15px;
+}
+
+.options div{
+    margin:5px;
+    display:flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    min-width: 480px;
+    background: rgb(13, 67, 129);
+    font-size: 30px;
+    border-radius: 3px;
+}
+
+.options div:hover{
+    background-color: black;
+    color:white;    
+}
+.answer-header{
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 45px;
+}
+.guess{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width:567px){
+    .answer-header{
+        width: 295px;
+    }
+    .options div{
+        min-width: 295px;
+    }
+    .image-option-container{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+}

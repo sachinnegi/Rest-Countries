@@ -6,6 +6,7 @@ import SearchBox from './Components/SearchBox/SearchBox';
 import Filter from './Components/Filter/Filter';
 import CardsArray from './Components/CardsArray/CardsArray';
 import FlagDetails from './Components/FlagDetails/FlagDetails';
+import FlagGame from './Components/FlagGame/FlagGame';
 
 import anime from 'animejs/lib/anime.es.js';
 
@@ -18,6 +19,7 @@ class App extends Component {
       url : "https://restcountries.eu/rest/v2/all",
       isFlagClicked : false,
       clickedCardCountry : '',
+      flagGame : true,
 
     }
   }
@@ -114,6 +116,10 @@ class App extends Component {
     }
   }
 
+  onAnswerBackButton = (value) =>{
+    this.setState({flagGame:value})
+  }
+
   onCardClicked = (country) =>{
     this.setState({searchField:''});
     this.changeCardClickState(true);
@@ -133,18 +139,24 @@ class App extends Component {
     return(
       <div>
           <Header changeCardClickState = {this.changeCardClickState} />
+          
+          
           {/*conditional rendering of compoenents*/}
-
           {this.state.isFlagClicked===false
-            ?<div> 
-                <div className= "search-and-filter">
-                  <SearchBox clickState = {this.state.isFlagClicked} onInputChange = {this.onSearchInputChange} />
-                  <Filter onFilterChange = {this.onFilterChange} />
+            ? (
+              this.state.flagGame === false
+              ? <div> 
+                  <div className= "search-and-filter">
+                    <SearchBox clickState = {this.state.isFlagClicked} onInputChange = {this.onSearchInputChange} />
+                    <Filter onFilterChange = {this.onFilterChange} />
+                  </div>
+                  <CardsArray countries = {filteredCountry.slice(0,130)} onCardClicked ={this.onCardClicked} />   {/*sliced some countries for faster page load*/}
                 </div>
-          <CardsArray countries = {filteredCountry.slice(0,130)} onCardClicked ={this.onCardClicked} />   {/*sliced some countries for faster page load*/}
-            </div>
-            :<FlagDetails changeCardClickState = {this.changeCardClickState} country ={this.state.clickedCardCountry} /> 
+              : <FlagGame onAnswerBackButton = {this.onAnswerBackButton} countries = {this.state.countries} />
+              )
+            : <FlagDetails changeCardClickState = {this.changeCardClickState} country ={this.state.clickedCardCountry} /> 
           }
+      
       </div>
     )
   }
