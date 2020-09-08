@@ -28,7 +28,7 @@
     justify-content: center;
     min-height: 60px;
     min-width: 480px;
-    background: rgb(13, 67, 129);
+    background: rgb(6, 84, 173);
     font-size: 30px;
     border-radius: 3px;
 }
@@ -60,5 +60,11 @@
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
+    }
+}
+@media screen and (max-width: 400px){
+    .options div{
+        font-size: 25px;
+        min-width: 265px;
     }
 }

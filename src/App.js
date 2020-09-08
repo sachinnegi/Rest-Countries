@@ -7,6 +7,7 @@ import Filter from './Components/Filter/Filter';
 import CardsArray from './Components/CardsArray/CardsArray';
 import FlagDetails from './Components/FlagDetails/FlagDetails';
 import FlagGame from './Components/FlagGame/FlagGame';
+import GameButton from './Components/GameButton/GameButton';
 
 import anime from 'animejs/lib/anime.es.js';
 
@@ -19,8 +20,7 @@ class App extends Component {
       url : "https://restcountries.eu/rest/v2/all",
       isFlagClicked : false,
       clickedCardCountry : '',
-      flagGame : true,
-
+      flagGame : false,
     }
   }
 
@@ -116,7 +116,7 @@ class App extends Component {
     }
   }
 
-  onAnswerBackButton = (value) =>{
+  onAnswerButton = (value) =>{
     this.setState({flagGame:value})
   }
 
@@ -148,11 +148,12 @@ class App extends Component {
               ? <div> 
                   <div className= "search-and-filter">
                     <SearchBox clickState = {this.state.isFlagClicked} onInputChange = {this.onSearchInputChange} />
+                    <GameButton onAnswerButton = {this.onAnswerButton} /> 
                     <Filter onFilterChange = {this.onFilterChange} />
                   </div>
                   <CardsArray countries = {filteredCountry.slice(0,130)} onCardClicked ={this.onCardClicked} />   {/*sliced some countries for faster page load*/}
                 </div>
-              : <FlagGame onAnswerBackButton = {this.onAnswerBackButton} countries = {this.state.countries} />
+              : <FlagGame onAnswerButton = {this.onAnswerButton} countries = {this.state.countries} />
               )
             : <FlagDetails changeCardClickState = {this.changeCardClickState} country ={this.state.clickedCardCountry} /> 
           }

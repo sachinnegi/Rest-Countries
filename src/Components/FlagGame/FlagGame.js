@@ -11,7 +11,7 @@ import './FlagGame.css'
     const answerFlag = flagNumbers[Math.floor(Math.random()*4)]
 
 
-const FlagGame = ({onAnswerBackButton,countries}) =>{
+const FlagGame = ({onAnswerButton,countries}) =>{
     
     
     // console.log(countries);
@@ -23,7 +23,7 @@ const FlagGame = ({onAnswerBackButton,countries}) =>{
     else{
         return(
             <div className="cardsdetail-container">
-                <div onClick = { () => onAnswerBackButton(false) } 
+                <div onClick = { () => onAnswerButton(false) } 
                     className='back-button'>
                     <span>&larr;</span> <span>Back</span> 
                 </div>
