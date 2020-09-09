@@ -58,7 +58,13 @@ div.right{
     background: green;
 }
 div.wrong{
-    background: red;
+    background-color: rgb(231, 15, 15);
+    color: white;
+    background-image: url(./skull.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    background-size: 50px 50px; 
 }
 
 @media screen and (max-width:1120px){

@@ -15,6 +15,13 @@ function numberGenerator(){
         }
     answerFlag = flagNumbers[Math.floor(Math.random()*4)]
 }
+var countries = [];
+let fetchCountries = async () =>{
+      const resp = await fetch("https://restcountries.eu/rest/v2/all");
+      const data = await resp.json();
+      countries = data;
+    }
+fetchCountries();
 numberGenerator();
 
 // handling the answer by user
@@ -30,11 +37,12 @@ function optionClick(event){
     }
     else{
         event.target.className = "wrong";
+        event.target.textContent = 'X';
     }
 }
 
 
-const FlagGame = ({countries,onAnswerButton}) =>{
+const FlagGame = ({onAnswerButton}) =>{
     
     numberGenerator();
     flagName = countries[answerFlag].name
