@@ -4,10 +4,16 @@ import './Header.css'
 
 
 
-const Header = ( {changeCardClickState} ) =>{
+const Header = ( {onAnswerButton, changeCardClickState} ) =>{
     return(
         <div  className="header">
-            <img onClick = {() => changeCardClickState(false)} className = 'logo' alt='headerimg' src={logo} />
+            <img 
+                onClick = {() => {changeCardClickState(false)
+                                    onAnswerButton(false)}} 
+                 className = 'logo' 
+                 alt='headerimg' 
+                 src={logo} 
+            />
             <h2>Light</h2> 
         </div>
     )

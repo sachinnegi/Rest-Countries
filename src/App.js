@@ -134,7 +134,7 @@ class App extends Component {
 
     return(
       <div>
-          <Header changeCardClickState = {this.changeCardClickState} />
+          <Header onAnswerButton = {this.onAnswerButton} changeCardClickState = {this.changeCardClickState} />
           
           
           {/*conditional rendering of compoenents*/}
