@@ -4,7 +4,7 @@ let GameButton = ({onAnswerButton}) =>{
     return(
     <div>
         <button onClick = { ()=> onAnswerButton(true)}>
-            Guess the Card
+            Guess the Flag!!
         </button>
     </div>
     )

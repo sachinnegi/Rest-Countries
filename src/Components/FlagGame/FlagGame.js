@@ -58,12 +58,10 @@ const FlagGame = ({onbuttonClick, changeCardClickState, onAnswerButton}) =>{
                     <span>&larr;</span> <span>Back</span> 
                 </div>
 
-                <div className = "image-option-container">
-                    <div className ="detail-n-image">
-                        
+                <div className = "image-option-container">    
                         <div className = "flag-image-container" style ={{backgroundImage: `url("${countries[answerFlag].flag}")`}} >
                         </div>
-                    </div>
+                
                     <div className="answer-header">
                         <div id='detail-x' className='detail-box' >
                             <button onClick = { () => onbuttonClick(countries[answerFlag])} > Click for Flag Detail</button>
