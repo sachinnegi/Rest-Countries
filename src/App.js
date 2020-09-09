@@ -149,7 +149,7 @@ class App extends Component {
                   </div>
                   <CardsArray countries = {filteredCountry.slice(0,130)} onCardClicked ={this.onCardClicked} />   {/*sliced some countries for faster page load*/}
                 </div>
-              : <FlagGame onFlagGame ={this.state.flagGame} onAnswerButton = {this.onAnswerButton} />
+              : <FlagGame countries ={this.state.countries} onAnswerButton = {this.onAnswerButton} />
               )
             : <FlagDetails changeCardClickState = {this.changeCardClickState} country ={this.state.clickedCardCountry} /> 
           }
