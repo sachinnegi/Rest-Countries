@@ -1,23 +1,39 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './FlagGame.css'
-// selecting random flags from countries
 
-    var flagNumbers = [];
+// selecting random flags from countries
+var flagNumbers = [];
+var answerFlag = 0;
+function numberGenerator(){
+    flagNumbers = [];
+    answerFlag = 0
+    console.log('inside numbergenerator')
     while (flagNumbers.length<4){
         var idx = Math.floor(Math.random()*200);
         if (!flagNumbers.includes(idx))
             flagNumbers.push(idx)
         }
-    const answerFlag = flagNumbers[Math.floor(Math.random()*4)]
+    answerFlag = flagNumbers[Math.floor(Math.random()*4)]
+}
+
+var countries = []
+let fetchcountries = async() =>{
+   const response = await fetch('https://restcountries.eu/rest/v2/all');
+   countries = await response.json();  
+   console.log('called here');
+   
+}
+numberGenerator();
+fetchcountries();
 
 
-const FlagGame = ({onAnswerButton,countries}) =>{
+const FlagGame = ({onAnswerButton}) =>{
     
+    numberGenerator();
     
-    // console.log(countries);
     if (countries.length===0){
         return(
-            <div></div>
+            <div>you got blanck haha</div>
         )
     }
     else{
@@ -42,9 +58,9 @@ const FlagGame = ({onAnswerButton,countries}) =>{
                     </div>
                 </div>
             </div>
-
             
         )
+    {flagNumbers=[]}
     }
 }
 

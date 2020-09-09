@@ -35,10 +35,6 @@ class App extends Component {
         this.setState({countries: data});
 
       }
-      else{
-        this.setState( { url:"https://restcountries.eu/rest/v2/all"} )
-        this.fetchCountries();
-      }
     }
     catch(error){
       console.log('THIS IS THE ERROR',error);
@@ -153,7 +149,7 @@ class App extends Component {
                   </div>
                   <CardsArray countries = {filteredCountry.slice(0,130)} onCardClicked ={this.onCardClicked} />   {/*sliced some countries for faster page load*/}
                 </div>
-              : <FlagGame onAnswerButton = {this.onAnswerButton} countries = {this.state.countries} />
+              : <FlagGame onFlagGame ={this.state.flagGame} onAnswerButton = {this.onAnswerButton} />
               )
             : <FlagDetails changeCardClickState = {this.changeCardClickState} country ={this.state.clickedCardCountry} /> 
           }
