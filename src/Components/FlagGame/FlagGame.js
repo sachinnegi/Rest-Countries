@@ -6,8 +6,7 @@ var flagNumbers = [];
 var flagName = '';
 var answerFlag = 0;
 var countries = [];
-var detailbox = document.getElementsByTagName('button');
-// console.log(detailbox.style.textContent);
+
 function numberGenerator(){
     flagNumbers = [];
     answerFlag = 0;
@@ -42,7 +41,7 @@ function optionClick(event){
 }
 
 
-const FlagGame = ({onAnswerButton}) =>{
+const FlagGame = ({onbuttonClick, changeCardClickState, onAnswerButton}) =>{
     
     numberGenerator();
     flagName = countries[answerFlag].name
@@ -67,7 +66,7 @@ const FlagGame = ({onAnswerButton}) =>{
                     </div>
                     <div className="answer-header">
                         <div id='detail-x' className='detail-box' >
-                            <button>Click for Flag Detail</button>
+                            <button onClick = { () => onbuttonClick(countries[answerFlag])} > Click for Flag Detail</button>
                         </div>
                         <div className='guess'>Guess the Flag!</div>
                         <div className = "options">
