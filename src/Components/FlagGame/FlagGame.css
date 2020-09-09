@@ -54,6 +54,26 @@
     margin-bottom: 10px;
 }
 
+.detail-box{
+    display: none;
+    font-size:20px;
+    margin-bottom:10px;
+    border-radius: 5px;
+    width: 200px;
+    
+}
+.detail-box button{
+    background:black;
+    color:white;
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+}
+.detail-box button:hover{
+    background:white;
+    color:black;
+}
+
 div.right{
     background: green;
 }

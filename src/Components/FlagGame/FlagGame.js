@@ -1,10 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './FlagGame.css'
 
 // selecting random flags from countries
 var flagNumbers = [];
 var flagName = '';
 var answerFlag = 0;
+var countries = [];
+var detailbox = document.getElementsByTagName('button');
+// console.log(detailbox.style.textContent);
 function numberGenerator(){
     flagNumbers = [];
     answerFlag = 0;
@@ -15,7 +18,7 @@ function numberGenerator(){
         }
     answerFlag = flagNumbers[Math.floor(Math.random()*4)]
 }
-var countries = [];
+
 let fetchCountries = async () =>{
       const resp = await fetch("https://restcountries.eu/rest/v2/all");
       const data = await resp.json();
@@ -26,14 +29,11 @@ numberGenerator();
 
 // handling the answer by user
 function optionClick(event){
-    console.log(event.target.textContent,flagName);
-    
-    console.log(event.target.style)
-    console.log(event.target.style.backgroundColor)
     
     if (event.target.textContent === flagName){
         event.target.className = "right";
-        console.log('true')
+        document.getElementById("detail-x").style.display = "block"
+        
     }
     else{
         event.target.className = "wrong";
@@ -48,7 +48,7 @@ const FlagGame = ({onAnswerButton}) =>{
     flagName = countries[answerFlag].name
     if (countries.length===0){
         return(
-            <div>you got blanck haha</div>
+            <div>you got blank haha</div>
         )
     }
     else{
@@ -60,9 +60,15 @@ const FlagGame = ({onAnswerButton}) =>{
                 </div>
 
                 <div className = "image-option-container">
-                    <div className = "flag-image-container" style ={{backgroundImage: `url("${countries[answerFlag].flag}")`}} >
+                    <div className ="detail-n-image">
+                        
+                        <div className = "flag-image-container" style ={{backgroundImage: `url("${countries[answerFlag].flag}")`}} >
+                        </div>
                     </div>
                     <div className="answer-header">
+                        <div id='detail-x' className='detail-box' >
+                            <button>Click for Flag Detail</button>
+                        </div>
                         <div className='guess'>Guess the Flag!</div>
                         <div className = "options">
                             <div onClick={optionClick} className="">{countries[flagNumbers[0]].name}</div>
