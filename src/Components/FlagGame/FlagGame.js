@@ -32,6 +32,7 @@ function optionClick(event){
     if (event.target.textContent === flagName){
         event.target.className = "right";
         document.getElementById("detail-x").style.display = "block"
+        document.getElementById("guessing").style.display = "none"
         
     }
     else{
@@ -66,7 +67,7 @@ const FlagGame = ({onbuttonClick, changeCardClickState, onAnswerButton}) =>{
                         <div id='detail-x' className='detail-box' >
                             <button onClick = { () => onbuttonClick(countries[answerFlag])} > Click for Flag Detail</button>
                         </div>
-                        <div className='guess'>Guess the Flag!</div>
+                        <div id='guessing' className='guess'>Guess the Flag!</div>
                         <div className = "options">
                             <div onClick={optionClick} className="">{countries[flagNumbers[0]].name}</div>
                             <div onClick={optionClick} className=''>{countries[flagNumbers[1]].name}</div>

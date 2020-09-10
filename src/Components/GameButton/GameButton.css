@@ -1,0 +1,17 @@
+.buttonClass{
+    background-color:rgba(0, 0, 0, 0.712);
+    color: white;
+    border: none;
+    height: 35px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    transition: all 0.4s;
+    border-radius: 4px;
+    cursor:pointer;
+    font-size: 20px;
+}
+
+.buttonClass:hover{
+    background-color:hsl(0, 0%, 100%);
+    color: black;
+    transform: scale(1.08,1.08);
+}

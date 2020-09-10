@@ -1,5 +1,4 @@
 .image-option-container{
-    /* background: red; */
     display: flex;
     flex-flow: row wrap;
     align-items: center;
