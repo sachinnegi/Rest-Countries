@@ -14,7 +14,7 @@ const Header = ( {onAnswerButton, changeCardClickState} ) =>{
                  alt='headerimg' 
                  src={logo} 
             />
-            <h2>Light</h2> 
+            <div class="earth"></div> 
         </div>
     )
 }

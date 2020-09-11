@@ -37,7 +37,7 @@
     color:white;   
     transform: scale(1.02);
     box-shadow: 4px 4px 4px rgba(0,0,0,0.4);
-
+    border-top: 5px hsl(348, 97%, 39%) solid;
 }
 
 

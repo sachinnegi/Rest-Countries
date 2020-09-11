@@ -14,4 +14,5 @@
     background-color:hsl(0, 0%, 100%);
     color: black;
     transform: scale(1.08,1.08);
+    border-top: 3px hsl(340, 94%, 48%) solid;
 }
