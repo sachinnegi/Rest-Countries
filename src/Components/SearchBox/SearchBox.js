@@ -16,7 +16,7 @@ const SearchBox = ({clickState, onInputChange}) =>{
                 onChange = {onInputChange}    
                 
             />
-            <FontAwesomeIcon icon={faSearch} color={''} size='lg' />
+            <FontAwesomeIcon icon={faSearch} color={''} size='lg' className='search-icon' />
             
         </div>
     )
