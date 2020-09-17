@@ -3,7 +3,7 @@ import './Filter.css'
 
 const Filter = ({onFilterChange})=>{
     return(
-        <div>
+        <div className='filter-container'>
             <select id='selection' onChange={onFilterChange}>
                 <option value = 'Filter'> Filter By Region</option>
                 <option value = 'Asia'> Asia</option>

@@ -4,8 +4,8 @@
     border: none;
     border-radius: 3px;
     height: 40px;
-    width: 400px;
-    box-shadow: 1px 0px 4px rgba(0,0,0,0.4);
+    width: 360px;
+    
     color : hsl(0, 1%, 28%);
     padding:20px;
 
@@ -21,4 +21,15 @@
     .searchbox input{
         width: 250px;
     }
+}
+
+.searchbox{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    background: hsl(0, 0%, 100%);
+    border: none;
+    border-radius: 3px;
+    box-shadow: 1px 0px 4px rgba(0,0,0,0.4);
+    padding-right: 10px;
 }
