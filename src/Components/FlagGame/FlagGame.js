@@ -1,5 +1,7 @@
 import React from 'react';
-import './FlagGame.css'
+import './FlagGame.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
 // selecting random flags from countries
 var flagNumbers = [];
@@ -56,7 +58,7 @@ const FlagGame = ({onbuttonClick, changeCardClickState, onAnswerButton}) =>{
             <div className="cardsdetail-container">
                 <div onClick = { () => onAnswerButton(false) } 
                     className='back-button'>
-                    <span>&larr;</span> <span>Back</span> 
+                    <span> <FontAwesomeIcon icon={faArrowCircleLeft} /> </span> <span>Back</span> 
                 </div>
 
                 <div className = "image-option-container">    

@@ -1,5 +1,7 @@
 import React from 'react';
 import './FlagDetails.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons'
 
 
 const FlagDetails = ({changeCardClickState, country}) => {
@@ -8,7 +10,7 @@ const FlagDetails = ({changeCardClickState, country}) => {
         <div className='cardsdetail-container'>
 
             <div onClick = { () => changeCardClickState(false)} className='back-button'>
-                <span>&larr;</span> <span>Back</span> 
+                <span> <FontAwesomeIcon icon={faArrowCircleLeft} /> </span> <span>Back</span> 
             </div>
 
             <div className = "image-detail-container">
